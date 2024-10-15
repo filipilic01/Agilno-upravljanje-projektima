@@ -1,0 +1,37 @@
+<div class="container">
+    <h3 mat-dialog-title >{{data.backlogItemName}}</h3>
+
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field>
+                <textarea matInput placeholder="Name" [(ngModel)]="description.descriptionText" required [disabled]="flagDescription == 3">
+                </textarea>
+                   
+            </mat-form-field>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button type="submit" 
+            *ngIf="flagDescription==1"
+            [disabled]="!formControl.valid" (click)="addDescription()">
+                Save
+            </button>
+            <button mat-button type="submit" 
+            *ngIf="flagDescription==2"
+            [disabled]="!formControl.valid" (click)="editDescription()" >
+                Save
+            </button>
+            <button mat-button type="submit" 
+            *ngIf="flagDescription==3"
+            [disabled]="!formControl.valid" (click)="deleteDescription()">
+                Delete
+            </button>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+
+
+    </form>
+
+</div>
+

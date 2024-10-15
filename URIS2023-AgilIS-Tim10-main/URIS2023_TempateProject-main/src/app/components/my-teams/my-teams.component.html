@@ -1,0 +1,48 @@
+<div class="main-content" *ngIf="!teamBool">
+    <div class="container-fluid">
+<div class="row">
+<div class="col-lg-6 col-md-6" *ngFor="let team of teamsPublic">
+    <div class="card">
+        <div class="card-header card-header-tabs card-header-danger" style="text-align: center;">
+            <h4 class="card-title">{{team.nazivTima}}</h4>
+            <div>
+                <a mat-button class="nav-link" (click)="openEditTeamDialog(1,team)">
+                    <mat-icon aria-label="Edit" matTooltip="Edit team">edit</mat-icon>
+                    <div class="ripple-container"></div>
+                </a>
+            
+                <a mat-button class="nav-link" (click)="openEditTeamDialog(2,team)">
+                    <mat-icon aria-label="Delete" matTooltip="Delete team">delete</mat-icon>
+                    <div class="ripple-container"></div>
+                </a>
+        
+                <a mat-button class="nav-link" (click)="openProjects(team.timID, team.nazivTima)">
+                    <mat-icon aria-label="Projects" matTooltip="Projects">folder_open</mat-icon>
+                    <div class="ripple-container"></div>
+                </a>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover">
+            <thead class="text-warning" >
+                <th>
+                    Team members
+                </th>
+            </thead>
+              <tbody>
+                    <div class="example-box" *ngFor="let member of membersMap.get(team.timID)" >
+                        <span style="cursor: pointer">
+                            {{ member.userName }}
+                        </span>
+
+                         
+                    </div>
+              
+              </tbody>
+          </table>
+      </div>
+    </div>
+</div>
+</div>
+    </div>
+</div>

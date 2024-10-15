@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    height: 100%; /* Dodaj ovu liniju za automatsko proširivanje na visinu roditeljskog kontejnera */
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    height: 100%; /* Dodaj ovu liniju za automatsko proširivanje na visinu roditeljskog kontejnera */
+}
+
+.mat-form-field {
+    font-size: 16px;
+    flex-grow: 1;
+    height: 100%; /* Dodaj ovu liniju za automatsko proširivanje na visinu roditeljskog kontejnera */
+}

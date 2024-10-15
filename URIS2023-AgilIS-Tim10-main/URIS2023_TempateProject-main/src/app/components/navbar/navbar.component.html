@@ -1,0 +1,48 @@
+<!--<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-wrapper">
+        </div>
+        <button mat-raised-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form class="navbar-form"> </form>       
+        </div>
+    </div>
+</nav>
+-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Naziv i padajući meni -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome,  {{ getUsername() }}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+     
+      <ul class="navbar-nav ml-auto">
+       
+        <li class="nav-item dropdown">
+          <ng-container *ngIf="!getUsernameBoolean()">
+              <a routerLink="/login" class="btn btn-outline-secondary me-2">Login</a>
+              <a routerLink="/registration" class="btn btn-outline-secondary me-3">Signup</a>
+          </ng-container>
+          <ng-container *ngIf="getUsernameBoolean()">
+           
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ getUsername() }}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <!-- Dodajte link za Logout -->
+                    <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+                  </div>
+                
+          </ng-container>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

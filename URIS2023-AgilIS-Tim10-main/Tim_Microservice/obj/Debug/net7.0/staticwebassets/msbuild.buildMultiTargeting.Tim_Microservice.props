@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Tim_Microservice.props" />
+</Project>

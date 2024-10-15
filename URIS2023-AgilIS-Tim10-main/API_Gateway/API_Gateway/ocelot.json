@@ -1,0 +1,1582 @@
+{
+  "Routes": [
+    {
+      //User 
+      "DownstreamPathTemplate": "/api/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5239
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "POST" ],
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User"
+    },
+    {
+
+      "DownstreamPathTemplate": "/api/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5239
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "GET", "PUT", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User"
+    },
+    {
+      "DownstreamPathTemplate": "/api/auth",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5239
+        }
+      ],
+      "UpstreamPathTemplate": "/auth",
+      "UpstreamHttpMethod": [ "POST" ],
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User"
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5239
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{userId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User"
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/currentUser",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5239
+        }
+      ],
+      "UpstreamPathTemplate": "/user/currentUser",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User"
+    },
+    {
+      //Logger
+      "DownstreamPathTemplate": "/api/logger",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5156
+        }
+      ],
+      "UpstreamPathTemplate": "/logger",
+      "UpstreamHttpMethod": [ "POST" ],
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Logger"
+    },
+    //Backlog
+    {
+      "DownstreamPathTemplate": "/api/backlogs",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/{backlogId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/backlogItem/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/backlogItem/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/epics/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/epics/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/userStories/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/userStories/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/functionalities/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/functionalities/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/tasks/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/tasks/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/sprint/projekat/{projekatId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/sprint/projekat/{projekatId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/product/projekat/{projekatId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/product/projekat/{projekatId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/productBacklogs/user/{korisnikId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/productBacklogs/user/{korisnikId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/sprintBacklogs/user/{korisnikId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/sprintBacklogs/user/{korisnikId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog"
+    },
+    //ProductBacklog
+    {
+      "DownstreamPathTemplate": "/api/backlogs/productBacklogs",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/productBacklogs",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Product_Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/productBacklogs/{productBacklogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/productBacklogs/{productBacklogId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Product_Backlog"
+    },
+    //SprintBacklog
+    {
+      "DownstreamPathTemplate": "/api/backlogs/sprintBacklogs",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/sprintBacklogs",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Sprint_Backlog"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogs/sprintBacklogs/{sprintBacklogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5272
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogs/sprintBacklogs/{sprintBacklogId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Sprint_Backlog"
+    },
+    {
+      //Backlog item
+      "DownstreamPathTemplate": "/api/backlogItems",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/criteria/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/criteria/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/description/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/description/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/storyPoint/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/storyPoint/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/rag/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/rag/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/status/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/status/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/backlog/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/backlog/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Backlog_item"
+    },
+    //Acceptance criteria
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/acceptanceCriteria",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/acceptanceCriteria",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Acceptance_Criteria"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/acceptanceCriteria/{acceptanceCriteriaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/acceptanceCriteria/{acceptanceCriteriaId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Acceptance_Criteria"
+    },
+    //Description
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/descriptions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/descriptions",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Description"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/descriptions/{descriptionId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/descriptions/{descriptionId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Description"
+    },
+    //Story point
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/storyPoints",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/storyPoints",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Story_Point"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/storyPoints/{storyPointId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/storyPoints/{storyPointId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Story_Point"
+    },
+    //Epic
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/epics",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/epics",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Epic"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/epics/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/epics/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Epic"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/epics/backlog/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/epics/backlog/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Epic"
+    },
+    //Functionality
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/functionalities",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/functionalities",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Functionality"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/functionalities/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/functionalities/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Functionality"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/functionalities/backlog/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/functionalities/backlog/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Functionality"
+    },
+    //Task
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/tasks",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/tasks",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Task"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/tasks/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/tasks/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Task"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/tasks/backlog/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/tasks/backlog/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Task"
+    },
+    //UserStory
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/userStories",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/userStories",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User_Story"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/userStories/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/userStories/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User_Story"
+    },
+    {
+      "DownstreamPathTemplate": "/api/backlogItems/userStories/backlog/{backlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5160
+        }
+      ],
+      "UpstreamPathTemplate": "/backlogItems/userStories/backlog/{backlogId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "User_Story"
+    },
+    //FAQSection
+    {
+      "DownstreamPathTemplate": "/api/FAQSection",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "FAQ_Section"
+    },
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/{faqSectionId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/{faqSectionId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "FAQ_Section"
+    },
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/questions/{faqId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/questions/{faqId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "FAQ_Section"
+    },
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/user/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/user/{userId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "FAQ_Section"
+    },
+    //Question
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/question",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/question",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Question"
+    },
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/question/{questionId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/question/{questionId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Question"
+    },
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/question/answer/{questionId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/question/answer/{questionId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Question"
+    },
+    //Answer
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/answer",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/answer",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Answer"
+    },
+    {
+      "DownstreamPathTemplate": "/api/FAQSection/answer/{answerId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5184
+        }
+      ],
+      "UpstreamPathTemplate": "/FAQSection/answer/{answerId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Answer"
+    },
+    //Rag
+    {
+      "DownstreamPathTemplate": "/api/rag",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5176
+        }
+      ],
+      "UpstreamPathTemplate": "/rag",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Rag"
+    },
+    {
+      "DownstreamPathTemplate": "/api/rag/{ragId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5176
+        }
+      ],
+      "UpstreamPathTemplate": "/rag/{ragId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Rag"
+    },
+    {
+      "DownstreamPathTemplate": "/api/rag/backlogItem/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5176
+        }
+      ],
+      "UpstreamPathTemplate": "/rag/backlogItem/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Rag"
+    },
+    //Status
+    {
+      "DownstreamPathTemplate": "/api/status",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5053
+        }
+      ],
+      "UpstreamPathTemplate": "/status",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Status"
+    },
+    {
+      "DownstreamPathTemplate": "/api/status/{statusId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5053
+        }
+      ],
+      "UpstreamPathTemplate": "/status/{statusId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Status"
+    },
+    {
+      "DownstreamPathTemplate": "/api/status/backlogItem/{backlogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5053
+        }
+      ],
+      "UpstreamPathTemplate": "/status/backlogItem/{backlogItemId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Status"
+    },
+    //Team
+    {
+      "DownstreamPathTemplate": "/api/Tim",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tim/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tim/GetByNaziv/{naziv}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim/GetByNaziv/{naziv}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tim/projekat/{timId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim/projekat/{timId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tim/clan/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim/clan/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tim/username/{username}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim/username/{username}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team"
+    },
+    //ClanTima
+    {
+      "DownstreamPathTemplate": "/api/Tim/ClanTima",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim/ClanTima",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team_Member"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tim/ClanTima/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/Tim/ClanTima/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Team_Member"
+    },
+    //Project
+    {
+      "DownstreamPathTemplate": "/api/Projekat",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5125
+        }
+      ],
+      "UpstreamPathTemplate": "/Projekat",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Project"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Projekat/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5125
+        }
+      ],
+      "UpstreamPathTemplate": "/Projekat/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Project"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Projekat/GetByNaziv{naziv}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5125
+        }
+      ],
+      "UpstreamPathTemplate": "/Project/GetByNaziv{naziv}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Project"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Projekat/GetByTimId{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5125
+        }
+      ],
+      "UpstreamPathTemplate": "/Project/GetByTimId{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Project"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Projekat/backlog/{projekatId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5125
+        }
+      ],
+      "UpstreamPathTemplate": "/Projekat/backlog/{projekatId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Project"
+    }
+
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "User",
+      "Config": [
+        {
+          "Name": "User API",
+          "Version": "v1",
+          "Url": "http://localhost:5239/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Backlog",
+      "Config": [
+        {
+          "Name": "Backlog API",
+          "Version": "v1",
+          "Url": "http://localhost:5272/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Product_Backlog",
+      "Config": [
+        {
+          "Name": "Product Backlog API",
+          "Version": "v1",
+          "Url": "http://localhost:5272/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Sprint_Backlog",
+      "Config": [
+        {
+          "Name": "Sprint Backlog API",
+          "Version": "v1",
+          "Url": "http://localhost:5272/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Logger",
+      "Config": [
+        {
+          "Name": "Logger API",
+          "Version": "v1",
+          "Url": "http://localhost:5156/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Backlog_Item",
+      "Config": [
+        {
+          "Name": "Backlog Item API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Epic",
+      "Config": [
+        {
+          "Name": "Epic API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Functionality",
+      "Config": [
+        {
+          "Name": "Functionality API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "User_Story",
+      "Config": [
+        {
+          "Name": "User Story API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Task",
+      "Config": [
+        {
+          "Name": "Task API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Acceptance_Criteria",
+      "Config": [
+        {
+          "Name": "Acceptance Criteria API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Description",
+      "Config": [
+        {
+          "Name": "Description API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Story_Point",
+      "Config": [
+        {
+          "Name": "Story Point API",
+          "Version": "v1",
+          "Url": "http://localhost:5160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "FAQ_Section",
+      "Config": [
+        {
+          "Name": "FAQ Section API",
+          "Version": "v1",
+          "Url": "http://localhost:5184/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Question",
+      "Config": [
+        {
+          "Name": "Question API",
+          "Version": "v1",
+          "Url": "http://localhost:5184/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Answer",
+      "Config": [
+        {
+          "Name": "Answer API",
+          "Version": "v1",
+          "Url": "http://localhost:5184/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Rag",
+      "Config": [
+        {
+          "Name": "Rag API",
+          "Version": "v1",
+          "Url": "http://localhost:5176/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Status",
+      "Config": [
+        {
+          "Name": "Status API",
+          "Version": "v1",
+          "Url": "http://localhost:5053/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Team",
+      "Config": [
+        {
+          "Name": "Team API",
+          "Version": "v1",
+          "Url": "http://localhost:5288/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Team_Member",
+      "Config": [
+        {
+          "Name": "Team Member API",
+          "Version": "v1",
+          "Url": "http://localhost:5288/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Project",
+      "Config": [
+        {
+          "Name": "Project API",
+          "Version": "v1",
+          "Url": "http://localhost:5125/swagger/v1/swagger.json"
+        }
+      ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost"
+  }
+
+}

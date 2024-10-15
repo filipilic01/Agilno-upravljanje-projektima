@@ -1,0 +1,31 @@
+
+<div class="container">
+    <h3 mat-dialog-title> Product backlog details</h3>
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field>
+                <input matInput placeholder="Title" #titleInput  [value]="title"  required>
+                   
+            </mat-form-field>
+        </div>
+        <div class="form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Description" #descInput  [value]="desc" required>
+          </mat-form-field>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button (click)="saveBacklog()">
+                Save
+            </button>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+        
+
+
+    </form>
+
+</div>
+
+

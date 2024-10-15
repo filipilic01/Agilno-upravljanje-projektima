@@ -1,0 +1,34 @@
+.wrapper { margin: 1em auto}
+
+.notification {
+  position:relative;
+  margin:1em auto;
+  width: 600px
+}
+	
+	.notification .notification-description .fa {
+	  color:#fff;
+    margin-right: .5em
+  }
+	
+  .notification .notification-description p {
+    margin:0;
+    padding: 1em 1.3em;
+    color:#ecf0f1	
+  }
+	.notification .notification-description p strong {
+    margin-right: 1em;
+    font-size: 20px;
+  }
+
+  .notification.info .notification-description p {
+    background: #E63E3A; 
+    background: linear-gradient(
+        25deg,
+        rgba(252,149,13) 0%,
+        rgb(230, 62, 58) 15%,
+        rgb(230, 62, 58) 15%,
+        #E63E3A 100% 
+    );
+    color: white; 
+}

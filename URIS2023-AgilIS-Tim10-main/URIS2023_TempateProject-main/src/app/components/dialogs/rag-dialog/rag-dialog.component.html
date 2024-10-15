@@ -1,0 +1,39 @@
+<div class="container">
+    <h3 mat-dialog-title >{{data.backlogItemName}}</h3>
+
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-select placeholder="Rag value" [(ngModel)]="rag.ragValue">
+                <mat-option value="Red" style="color: red;">Red</mat-option>
+                <mat-option value="Yellow" style="color: yellow;">Yellow</mat-option>
+                <mat-option value="Green" style="color: green;">Green</mat-option>
+              </mat-select>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button type="submit" 
+            *ngIf="flagRag==1"
+            [disabled]="!formControl.valid" (click)="addRag()">
+                Save
+            </button>
+            <button mat-button type="submit" 
+            *ngIf="flagRag==2"
+            [disabled]="!formControl.valid" (click)="editRag()" >
+                Save
+            </button>
+            <button mat-button type="submit" 
+            *ngIf="flagRag==3"
+            [disabled]="!formControl.valid" (click)="deleteRag()">
+                Delete
+            </button>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+
+
+    </form>
+
+</div>
+
+
+

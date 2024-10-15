@@ -1,0 +1,43 @@
+<div class="container">
+    <h3 mat-dialog-title >{{data.backlogItemName}}</h3>
+
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-select placeholder="Status value" [(ngModel)]="status.vrednostStatusa">
+                <mat-option value="To do">To Do</mat-option>
+                <mat-option value="In Progress">In Progress</mat-option>
+                <mat-option value="Done">Done</mat-option>
+                <mat-option value="In Review">In Review</mat-option>
+                <mat-option value="Ready for Test">Ready for Test</mat-option>
+                <mat-option value="Accepted">Accepted</mat-option>
+              </mat-select>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button type="submit" 
+            *ngIf="flagStatus==1"
+            [disabled]="!formControl.valid" (click)="addStatus()">
+                Save
+            </button>
+            <button mat-button type="submit" 
+            *ngIf="flagStatus==2"
+            [disabled]="!formControl.valid" (click)="editStatus()" >
+                Save
+            </button>
+            <button mat-button type="submit" 
+            *ngIf="flagStatus==3"
+            [disabled]="!formControl.valid" (click)="deleteStatus()">
+                Delete
+            </button>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+
+
+    </form>
+
+</div>
+
+
+
+

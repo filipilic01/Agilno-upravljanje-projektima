@@ -1,0 +1,378 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-6 col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-tabs card-header-primary">
+                      <div class="nav-tabs-navigation">
+                          <div class="nav-tabs-wrapper">
+                              <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" data-toggle="tab" (click)=" getProductBacklog()">
+                                       <i> {{ product.naslov}}</i>
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link" data-toggle="tab" (click)="getEpicsForProductBacklogId(product.idBacklog)">
+                                          Epics
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link" href="#messages" data-toggle="tab" (click)="getUserStoriesForProductBacklogId(product.idBacklog)">
+                                           User Stories
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link" href="#settings" data-toggle="tab" (click)="getTasksForProductBacklogId(product.idBacklog)">
+                                          Tasks
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#messages" data-toggle="tab" (click)="getFunctionalitiesForProductBacklogId(product.idBacklog)">
+                                         Functionalities
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                  </li>
+                                  <li class="nav-item" style="margin-left: auto;" >
+                                    <a mat-button class="nav-link" href="#messages" data-toggle="tab" (click)="openProductDialog()">
+                                         <mat-icon aria-label="Edit" style="color: grey;" matTooltip="Edit product backlog">edit</mat-icon>
+                                       <div class="ripple-container"></div>
+                                   </a>
+                                    
+                                  
+                                  
+                                 </li>
+                                   
+                                 
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-warning " >
+                            <th>
+                                Backlog items
+                               
+                               <span>
+                                <a mat-button class="nav-link" (click)="openCreateDialog(product.idBacklog)">
+                                    <mat-icon aria-label="Add" matTooltip="Add backlog item">add</mat-icon>
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </span>
+                            
+                            </th>
+                        </thead>
+                        <tbody>
+                            <div>
+                            <div class="example-box" *ngFor="let item of backlogItemsProduct" >
+                                <span><mat-icon aria-label="Expand_more" style="color: grey; cursor: pointer;" [matMenuTriggerFor]="menu" >expand_more</mat-icon></span>
+                                <span (click)="openItemDetailsDialog(item)" style="cursor:pointer ; margin-left: 7px;">
+                                    {{ item.backlogItemName }}
+                                </span>
+                               <span>
+                                <mat-icon aria-label="arrow_forward" matTooltip="Move to sprint backlog" style="color: grey; cursor: pointer;" (click)="updateProductItem(item)">arrow_forward</mat-icon>
+                                <span class="icon-spacing" ></span>
+                                <mat-icon aria-label="Edit" matTooltip="Edit backlog item" style="color: grey; cursor: pointer;" (click)="openEditDialog(1,item)">edit</mat-icon>
+                                <span class="icon-spacing" ></span>
+                                <mat-icon aria-label="Delete" matTooltip="Delete backlog item" style="color: grey; cursor: pointer;" (click)="openEditDialog(2,item)">delete</mat-icon>
+                                </span>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item  [matMenuTriggerFor]="subMeni">
+    
+                                      <span>Acceptance criteria</span>
+                                    </button>
+                                    <mat-menu #subMeni="matMenu">
+                                        <button mat-menu-item  (click)="openCriteriaDialog(1,item)">
+                                            <mat-icon aria-label="Add" style="color: grey;">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item (click)="openCriteriaDialog(2,item)">
+                                            <mat-icon aria-label="Edit" style="color: grey;">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item (click)="openCriteriaDialog(3,item)">
+                                            <mat-icon aria-label="Delete" style="color: grey;">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                    <button mat-menu-item  [matMenuTriggerFor]="subMena">
+                                     
+                                      <span>Description</span>
+                                    </button>
+                                    <mat-menu #subMena="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;" (click)="openDescriptionDialog(1, item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openDescriptionDialog(2, item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openDescriptionDialog(3, item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                    <button mat-menu-item  [matMenuTriggerFor]="subMene">
+                                     
+                                      <span>Rag</span>
+                                    </button>
+                                    <mat-menu #subMene="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;" (click)="openRagDialog(1, item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openRagDialog(2, item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openRagDialog(3, item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                    <button mat-menu-item  [matMenuTriggerFor]="subMeno">
+                                     
+                                        <span>Status</span>
+                                    </button>
+                                    <mat-menu #subMeno="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;" (click)="openStatusDialog(1, item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openStatusDialog(2, item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openStatusDialog(3, item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                      <button mat-menu-item [matMenuTriggerFor]="subMenw">
+                                     
+                                        <span>Story point</span>
+                                    </button>
+                                    <mat-menu #subMenw="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;" (click)="openStoryPointDialog(1,item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openStoryPointDialog(2,item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openStoryPointDialog(3,item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                  </mat-menu>
+
+                                 
+                            </div>
+                            
+                        </div>
+                          
+                          </tbody>
+                    </table>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                              <li class="nav-item">
+                                  <a mat-button class="nav-link" data-toggle="tab" (click)=" getSprintBacklog()">
+                                    <i> {{ sprint.naslov}}</i>
+                                      <div class="ripple-container"></div>
+                                  </a>
+                              </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" data-toggle="tab" (click)="getEpicsForSprintBacklogId(sprint.idBacklog)">
+                                        Epics
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#messages" data-toggle="tab" (click)="getUserStoriesForSprintBacklogId(sprint.idBacklog)">
+                                         User Stories
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#settings" data-toggle="tab" (click)="getTasksForSprintBacklogId(sprint.idBacklog)">
+                                        Tasks
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a mat-button class="nav-link" href="#messages" data-toggle="tab" (click)="getFunctionalitiesForSprintBacklogId(sprint.idBacklog)">
+                                       Functionalities
+                                      <div class="ripple-container"></div>
+                                  </a>
+                              </li>
+                              <li class="nav-item" style="margin-left: auto;" >
+                                <a mat-button class="nav-link" href="#messages" data-toggle="tab"(click)="openSprintDialog()" >
+                                     <mat-icon aria-label="Edit" style="color: grey;" matTooltip="Edit sprint backlog">edit</mat-icon>
+                                   <div class="ripple-container"></div>
+                               </a>
+                                
+                              
+                              
+                             </li>
+                             
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                      <thead class="text-warning">
+                          
+                          <th>Backlog items</th>
+                          
+                      </thead>
+                      <tbody>
+                         
+                      
+                        <div
+                            >
+                            <div class="example-box" *ngFor="let item of backlogItemsSprint" >
+                                <span>
+                                    <mat-icon aria-label="Expand_more" style="color: grey; cursor: pointer;"  [matMenuTriggerFor]="menu" >expand_more</mat-icon>
+                                </span>
+                                <span (click)="openItemDetailsDialog(item)" style="cursor:pointer ; margin-left: 7px;">
+                                    {{ item.backlogItemName }}
+                                </span>
+                                
+                                <span>
+                                    <mat-icon aria-label="arrow_back" matTooltip="Back to product backlog" style="color: grey; margin-left: 5px; cursor: pointer;" (click)="updateSprintItem(item)">arrow_back</mat-icon>
+                                    <span class="icon-spacing"></span>
+                                    <mat-icon aria-label="Edit" matTooltip="Edit backlog item" style="color: grey; cursor: pointer;" (click)="openEditDialog(1,item)" >edit</mat-icon>
+                                    <span class="icon-spacing"></span>
+                                    <mat-icon aria-label="Delete" matTooltip="Delete backlog item" style="color: grey; cursor: pointer;"  (click)="openEditDialog(2,item)">delete</mat-icon>
+                                </span>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item [matMenuTriggerFor]="subMens">
+                                      <span>Acceptance criteria</span>
+                                    </button>
+                                    <mat-menu #subMens="matMenu">
+                                        <button mat-menu-item  (click)="openCriteriaDialog(1,item)">
+                                            <mat-icon aria-label="Add" style="color: grey;">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item (click)="openCriteriaDialog(2,item)">
+                                            <mat-icon aria-label="Edit" style="color: grey;">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item (click)="openCriteriaDialog(3,item)">
+                                            <mat-icon aria-label="Delete" style="color: grey;">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                    <button mat-menu-item [matMenuTriggerFor]="subMenn">
+                                     
+                                      <span>Description</span>
+                                    </button>
+                                    <mat-menu #subMenn="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;" (click)="openDescriptionDialog(1, item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openDescriptionDialog(2, item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openDescriptionDialog(3, item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                    <button mat-menu-item [matMenuTriggerFor]="subMenp">
+                                     
+                                      <span>Rag</span>
+                                    </button>
+                                    <mat-menu #subMenp="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;" (click)="openRagDialog(1, item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openRagDialog(2, item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openRagDialog(3, item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                    <button mat-menu-item [matMenuTriggerFor]="subMenx">
+                                     
+                                        <span>Status</span>
+                                    </button>
+                                    <mat-menu #subMenx="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;" (click)="openStatusDialog(1, item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openStatusDialog(2, item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openStatusDialog(3, item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                      <button mat-menu-item [matMenuTriggerFor]="subMenw">
+                                     
+                                        <span>Story point</span>
+                                    </button>
+                                    <mat-menu #subMenw="matMenu">
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Add" style="color: grey;"(click)="openStoryPointDialog(1, item)">add</mat-icon>
+                                            <span>Add</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Edit" style="color: grey;" (click)="openStoryPointDialog(2, item)">edit</mat-icon>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                            <mat-icon aria-label="Delete" style="color: grey;" (click)="openStoryPointDialog(3, item)">delete</mat-icon>
+                                            <span>Delete</span>
+    
+                                        </button>
+                                      </mat-menu>
+                                  </mat-menu>
+
+                            
+                            </div>
+                          </div>
+                        
+                        </tbody>
+                  </table>
+              </div>
+            </div>
+        </div>
+          
+      </div>
+  </div>
+</div>

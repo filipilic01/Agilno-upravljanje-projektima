@@ -1,0 +1,45 @@
+<div class="row d-flex align-items-center justify-content-center">
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title"> Create a new project</h4>
+                <p class="card-category">Complete your information about a project</p>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width">
+                              <input matInput placeholder="Project name" [(ngModel)]="project.nazivProjekta" required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width">
+                              <textarea matInput placeholder="Project description" [(ngModel)]="project.opisProjekta" required></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-md-12">
+                    
+                            <mat-form-field class="example-full-width">
+                                
+                                <mat-select placeholder="Team" [formControl]="projectControl">
+                                  <mat-option *ngFor="let team of teams" [value]="team.timID" >
+                                    {{ team.nazivTima }}
+                                    
+
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div>
+                    </div>
+                    <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="createProject()">Save</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

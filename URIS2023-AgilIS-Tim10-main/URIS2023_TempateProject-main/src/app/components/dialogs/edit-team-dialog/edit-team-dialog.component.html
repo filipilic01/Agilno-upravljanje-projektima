@@ -1,0 +1,32 @@
+
+<div class="container">
+    <h3 mat-dialog-title>Team: {{data.nazivTima}}</h3>
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field>
+                <textarea matInput placeholder="Name" [(ngModel)]="data.nazivTima" [disabled]="flagTeam == 2" required></textarea>
+                   
+            </mat-form-field>
+        </div>
+       
+        <div mat-dialog-actions>
+            <button mat-button type="submit" (click)="editTeam()" 
+            *ngIf="flagTeam==1"
+            [disabled]="!formControl.valid">
+                Save
+            </button>
+            <button mat-button type="submit" (click)="deleteTeam()" 
+            *ngIf="flagTeam==2"
+            >
+                Delete
+            </button>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+
+
+    </form>
+
+</div>
+

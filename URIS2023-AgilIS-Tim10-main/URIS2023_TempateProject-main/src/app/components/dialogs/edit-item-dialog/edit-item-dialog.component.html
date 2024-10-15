@@ -1,0 +1,31 @@
+
+<div class="container">
+    <h3 mat-dialog-title> Add new backlog item</h3>
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field>
+                <textarea matInput placeholder="Name" [(ngModel)]="data.backlogItemName" [disabled]="flagItem == 2" required></textarea>
+                   
+            </mat-form-field>
+        </div>
+       
+        <div mat-dialog-actions>
+            <button mat-button type="submit" (click)="editBacklogItem()" 
+            *ngIf="flagItem==1"
+            [disabled]="!formControl.valid">
+                Save
+            </button>
+            <button mat-button type="submit" (click)="deleteBacklogItem()" 
+            *ngIf="flagItem==2"
+            >
+                Delete
+            </button>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+
+
+    </form>
+
+</div>

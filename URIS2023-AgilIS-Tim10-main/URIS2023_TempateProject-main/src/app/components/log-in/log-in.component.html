@@ -1,0 +1,41 @@
+<div class="main-content text-center d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Log In</h4>
+              <p class="card-category">Enter your username and password</p>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Username" type="text" class="is-invalid" [(ngModel)] = "authCreds.Username" required >
+                      
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Password" type="password" [(ngModel)] = "authCreds.Password" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button mat-raised-button type="submit" class="btn btn-danger" (click)="onLogin()">Log In</button>
+                    <p>If you don't have an account, you can <a [routerLink]="['/registration']">register.</a></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

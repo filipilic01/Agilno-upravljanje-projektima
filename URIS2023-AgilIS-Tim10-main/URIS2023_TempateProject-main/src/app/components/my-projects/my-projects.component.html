@@ -1,0 +1,27 @@
+<div class="main-content"  *ngIf="!projectBool">
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-md-4" *ngFor="let project of projects" >
+                <div class="card card-chart">
+                    <div class="card-header card-header-success">
+                        <div class="ct-chart" id="dailySalesChart">
+                            <h2 style="text-align: center;">{{ name }}</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{project.nazivProjekta}}</h4>
+                        <p class="card-category">
+                            {{project.opisProjekta}}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center" >
+                        
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="openDashboard(project.projekatID)" >Open project</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,51 @@
+
+<div class="container">
+    <h3 mat-dialog-title> Sprint details</h3>
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field>
+                <input matInput placeholder="Title" #titleInput  [value]="title"  required>
+                   
+            </mat-form-field>
+        </div>
+        <div class="form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Description" #descInput  [value] ="desc"required>
+          </mat-form-field>
+        </div>
+        <div class="form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Goal" #goalInput [value] ="goal" required>
+          </mat-form-field>
+        </div>
+        
+        <div class="form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Start" [matDatepicker]="startPicker" [value]="startDate" required>
+              <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+              <mat-datepicker #startPicker></mat-datepicker>
+            </mat-form-field>
+         </div>
+         
+         <div class="form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="End" [matDatepicker]="endPicker" [min]="data.pocetak" [value]="endDate" required>
+              <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+              <mat-datepicker #endPicker></mat-datepicker>
+            </mat-form-field>
+         </div>
+        <div mat-dialog-actions>
+            <button mat-button (click)="saveBacklog()">
+                Save
+            </button>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+        
+
+
+    </form>
+
+</div>
+

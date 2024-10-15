@@ -1,0 +1,40 @@
+
+<div class="container">
+    <h3 mat-dialog-title> {{data.backlogItemName}}</h3>
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field>
+                <input matInput placeholder="Acceptance criteria"  [value]="criteria.acceptanceCriteriaText" disabled>
+                   
+            </mat-form-field>
+        </div>
+        <div class="from">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Description"  [value]="description.descriptionText" disabled>
+          </mat-form-field>
+        </div>
+        <div class="from">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="RAG"  [value]="rag.ragValue" disabled>
+          </mat-form-field>
+          <div class="from">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Status" [value]="status.vrednostStatusa" disabled>
+          </mat-form-field>
+        </div>
+        <div class="from">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Story point"  [value]="storyPoint.storyPointValue" disabled>
+          </mat-form-field>
+        </div>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+
+
+    </form>
+
+</div>
